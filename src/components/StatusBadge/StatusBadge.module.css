@@ -1,0 +1,55 @@
+/* A little cartoon sticker: solid fill, thick ink outline, hard shadow. */
+.badge {
+  --tone: var(--unknown);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 10px 1px 7px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--tone);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.md {
+  padding: 3px 14px 3px 10px;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.alive {
+  --tone: var(--alive);
+}
+
+/* Only the large badge (detail page) pulses; hundreds of animated list badges would be noisy. */
+.md.alive .dot {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.dead {
+  --tone: var(--dead);
+}
+
+.unknown {
+  --tone: var(--unknown);
+}
+
+@keyframes pulse {
+  50% {
+    background: var(--ink);
+  }
+}

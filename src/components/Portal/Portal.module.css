@@ -1,0 +1,57 @@
+.portal {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 18px rgba(151, 206, 76, 0.75)) drop-shadow(0 0 48px rgba(151, 206, 76, 0.35));
+  animation: wobble 3.2s ease-in-out infinite;
+}
+
+.swirl,
+.ripples,
+.core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.swirl {
+  background:
+    radial-gradient(circle, rgba(236, 255, 190, 0.95) 0 10%, transparent 42%),
+    repeating-conic-gradient(from 0deg, #bfde42 0deg 18deg, #4c9a1f 30deg 48deg, #97ce4c 60deg 72deg);
+  filter: blur(3px);
+  animation: spin 2.4s linear infinite;
+}
+
+.ripples {
+  background: repeating-radial-gradient(circle, transparent 0 7%, rgba(233, 255, 170, 0.35) 8% 10%, transparent 11% 15%);
+  mix-blend-mode: screen;
+  animation: spin 5s linear infinite reverse;
+}
+
+.core {
+  inset: 34%;
+  background: radial-gradient(circle, #ffffff 0%, #eaffb8 40%, rgba(191, 222, 66, 0) 75%);
+  filter: blur(4px);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  33% {
+    transform: scale(1.03, 0.97);
+  }
+
+  66% {
+    transform: scale(0.97, 1.03);
+  }
+}

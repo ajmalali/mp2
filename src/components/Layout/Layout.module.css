@@ -1,0 +1,196 @@
+.shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(6, 9, 26, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 10px var(--gutter) 8px;
+}
+
+/* Green slime oozing off the bottom edge of the header, like the logo's drips. */
+.slime {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 30px;
+  margin-top: -1px;
+  background: url('../../assets/slime-drip.svg') repeat-x 0 0 / 240px 30px;
+  filter: drop-shadow(0 4px 8px rgba(191, 222, 66, 0.25));
+  pointer-events: none;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease;
+}
+
+.brand:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+.logo {
+  width: auto;
+  height: 52px;
+  filter: drop-shadow(0 0 14px rgba(191, 222, 66, 0.35));
+}
+
+.brandSub {
+  margin-bottom: 6px;
+  padding: 2px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--morty);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.navLink {
+  padding: 8px 18px;
+  border: 3px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  box-shadow: var(--pop);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.navLink:hover {
+  background: var(--panel-hover);
+  border-color: var(--lime);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.navLink:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.navLinkActive,
+.navLinkActive:hover {
+  border-color: var(--ink);
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  margin-top: 30px;
+  padding: 10px var(--gutter);
+  background: rgba(255, 97, 97, 0.14);
+  border-block: 2px solid rgba(255, 97, 97, 0.45);
+  color: #ffd2d2;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.bannerButton {
+  padding: 4px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--dead);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 64px;
+}
+
+.footer {
+  padding: 22px var(--gutter);
+  border-top: 2px solid var(--line);
+  background: rgba(5, 7, 26, 0.8);
+  color: var(--text-faint);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: var(--cyan-strong);
+  text-decoration: underline;
+  text-decoration-color: var(--lime);
+  text-underline-offset: 3px;
+}
+
+.footer a:hover {
+  color: var(--lime);
+}
+
+.legal {
+  margin-top: 4px;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 560px) {
+  .logo {
+    height: 38px;
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .nav {
+    gap: 6px;
+  }
+
+  .navLink {
+    padding: 6px 12px;
+    font-size: 0.92rem;
+  }
+
+  .main {
+    padding-top: 44px;
+  }
+}

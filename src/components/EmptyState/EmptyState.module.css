@@ -1,0 +1,46 @@
+.wrapper {
+  padding: 56px 24px;
+  background: var(--panel);
+  border: 3px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.title {
+  color: var(--lime);
+  font-family: var(--font-ui);
+  font-size: 1.5rem;
+}
+
+.body {
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+
+.body p {
+  margin: 0 0 10px;
+}
+
+.body button {
+  margin-top: 6px;
+  padding: 8px 20px;
+  border: var(--outline);
+  border-radius: 999px;
+  background: var(--lime);
+  box-shadow: var(--pop);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.body button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.body button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}

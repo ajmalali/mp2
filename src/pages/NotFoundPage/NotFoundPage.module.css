@@ -1,0 +1,21 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.links a {
+  color: var(--cyan-strong);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--lime);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.links a:hover {
+  color: var(--lime);
+}

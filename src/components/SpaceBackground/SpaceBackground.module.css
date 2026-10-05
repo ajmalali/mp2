@@ -1,0 +1,95 @@
+.space {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 78% -8%, rgba(139, 92, 246, 0.35), transparent 65%),
+    radial-gradient(700px 480px at 8% 18%, rgba(214, 79, 201, 0.16), transparent 65%),
+    radial-gradient(800px 600px at 100% 100%, rgba(151, 206, 76, 0.16), transparent 60%),
+    linear-gradient(180deg, var(--space-deep) 0%, var(--space) 45%, var(--space-purple) 100%);
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.twinkleA,
+.twinkleB,
+.twinkleC {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.twinkleB {
+  animation-duration: 5.5s;
+  animation-delay: -2s;
+}
+
+.twinkleC {
+  animation-duration: 7s;
+  animation-delay: -4s;
+}
+
+.orb {
+  opacity: 0.85;
+}
+
+.greenPlanet {
+  position: absolute;
+  bottom: -260px;
+  left: -230px;
+  width: 560px;
+  height: 560px;
+  opacity: 0.45;
+  filter: drop-shadow(0 0 60px rgba(95, 208, 106, 0.35));
+  animation: drift 40s ease-in-out infinite alternate;
+}
+
+.ringPlanet {
+  position: absolute;
+  top: 110px;
+  right: -60px;
+  width: 300px;
+  height: 200px;
+  opacity: 0.7;
+  animation: drift 30s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translate(18px, -14px) rotate(4deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .greenPlanet {
+    bottom: -200px;
+    left: -200px;
+    width: 380px;
+    height: 380px;
+    opacity: 0.35;
+  }
+
+  .ringPlanet {
+    top: 70px;
+    right: -110px;
+    width: 220px;
+    height: 150px;
+    opacity: 0.45;
+  }
+}

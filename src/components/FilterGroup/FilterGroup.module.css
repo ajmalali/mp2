@@ -1,0 +1,95 @@
+.group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 0;
+  color: var(--cyan-strong);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.selectedCount {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--morty);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 2px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.12s ease;
+}
+
+.chip:hover {
+  background: var(--panel-hover);
+  border-color: var(--lime);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.chip:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+/* Selected chips turn into solid cartoon stickers with an ink outline. */
+.chip[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.check {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.count {
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip[aria-pressed='true'] .count {
+  background: rgba(5, 8, 21, 0.15);
+  color: var(--ink);
+}
