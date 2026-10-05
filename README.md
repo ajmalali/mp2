@@ -1,6 +1,10 @@
 # MP 2: Front-end App
 ### Due: Tuesday, Oct 6, 2026, 11:59PM CT
 
+> **Submission notes**
+> - Sources for the APIs, logo, fonts, libraries and reading material are declared in [SOURCES.md](SOURCES.md).
+> - LLM chatlogs: `llm_logs/claude-code-session-2026-10-05-2-build.txt`, indexed in `llm_logs.csv`.
+
 ## Table of Contents
 1. [Assignment](#assignment)
 2. [Grading Breakdown](#grading-breakdown)
